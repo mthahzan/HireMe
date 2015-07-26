@@ -1,0 +1,121 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/flexible_space_image_height"
+            android:scaleType="centerCrop"
+            android:src="@drawable/example" />
+
+        <FrameLayout
+            android:id="@+id/pager_wrapper"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/pager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </FrameLayout>
+
+        <View
+            android:id="@+id/overlay"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/flexible_space_image_height"
+            android:background="?attr/colorPrimary" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingEnd="@dimen/margin_standard"
+            android:paddingLeft="@dimen/margin_standard"
+            android:paddingStart="@dimen/margin_standard">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:maxLines="1"
+                android:minHeight="?attr/actionBarSize"
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/flexible_space_image_height"
+                android:background="@android:color/transparent" />
+        </LinearLayout>
+
+        <me.thahzan.hirethahzan.widget.SlidingTabLayout
+            android:id="@+id/sliding_tabs"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/tab_height"
+            android:background="@android:color/transparent" />
+    </FrameLayout>
+
+    <!--<me.thahzan.hirethahzan.widget.CircularImageView
+        android:id="@+id/main_avatar_imageview"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_toLeftOf="@+id/main_center_view"
+        android:layout_toStartOf="@+id/main_center_view"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:paddingTop="20dp"
+        android:layout_marginRight="20dp"
+        android:src="@drawable/temp_avatar"/>
+
+    <View
+        android:id="@+id/main_center_view"
+        android:layout_width="1dp"
+        android:layout_height="1dp"
+        android:layout_centerInParent="true"/>
+
+    <RelativeLayout
+        android:id="@+id/main_mini_bio_container"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:gravity="center_vertical"
+        android:layout_toRightOf="@+id/main_center_view"
+        android:layout_toEndOf="@+id/main_center_view"
+        android:layout_alignBottom="@+id/main_avatar_imageview">
+
+        <TextView
+            android:id="@+id/main_mini_bio_tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/primary_text"
+            android:text="@string/my_name"/>
+
+        <TextView
+            android:id="@+id/main_mini_bio_tv_profession"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="@color/secondary_text"
+            android:layout_below="@+id/main_mini_bio_tv_name"
+            android:text="@string/my_profession"/>
+
+        <TextView
+            android:id="@+id/main_mini_bio_tv_company"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="@color/secondary_text"
+            android:layout_below="@+id/main_mini_bio_tv_profession"
+            android:text="@string/my_company"/>
+
+    </RelativeLayout>-->
+
+</RelativeLayout>
