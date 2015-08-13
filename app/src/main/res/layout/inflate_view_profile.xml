@@ -7,8 +7,7 @@
         android:id="@+id/profile_icon"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:padding="5dp"
-        android:src="@drawable/ic_local_phone_48pt_3x" />
+        android:padding="5dp" />
 
     <TextView
         android:id="@+id/profile_label"
@@ -17,7 +16,6 @@
         android:layout_toRightOf="@+id/profile_icon"
         android:gravity="center_vertical"
         android:paddingLeft="10dp"
-        android:text=""
         android:textSize="14sp" />
 
 </RelativeLayout>

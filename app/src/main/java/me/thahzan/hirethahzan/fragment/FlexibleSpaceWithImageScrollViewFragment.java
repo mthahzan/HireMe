@@ -17,6 +17,18 @@ import me.thahzan.hirethahzan.R;
  */
 public class FlexibleSpaceWithImageScrollViewFragment extends FlexibleSpaceWithImageBaseFragment<ObservableScrollView> {
 
+    public static FlexibleSpaceWithImageScrollViewFragment getInstance(int scrollY) {
+        Bundle args = new Bundle();
+        args.putInt(ARG_SCROLL_Y, scrollY);
+
+        FlexibleSpaceWithImageScrollViewFragment flexibleSpaceWithImageScrollViewFragment
+                = new FlexibleSpaceWithImageScrollViewFragment();
+
+        flexibleSpaceWithImageScrollViewFragment.setArguments(args);
+
+        return flexibleSpaceWithImageScrollViewFragment;
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_flexiblespacewithimagescrollview, container, false);

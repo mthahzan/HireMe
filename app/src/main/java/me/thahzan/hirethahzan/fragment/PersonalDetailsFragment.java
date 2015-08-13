@@ -1,22 +1,30 @@
 package me.thahzan.hirethahzan.fragment;
 
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.github.ksoichiro.android.observablescrollview.ObservableScrollView;
 import com.github.ksoichiro.android.observablescrollview.ScrollUtils;
 import com.github.ksoichiro.android.observablescrollview.Scrollable;
+
+import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import me.thahzan.hirethahzan.MainActivity;
 import me.thahzan.hirethahzan.R;
 import me.thahzan.hirethahzan.model.BasicInfo;
-import me.thahzan.hirethahzan.widget.CircularImageView;
+import me.thahzan.hirethahzan.model.Profile;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -32,7 +40,19 @@ public class PersonalDetailsFragment extends FlexibleSpaceWithImageBaseFragment 
 
     private int scrollY;
 
-    @Bind(R.id.main_avatar_imageview) CircularImageView avatar;
+    @Bind(R.id.main_mini_bio_tv_summary)
+    TextView summary;
+
+    @Bind(R.id.main_profiles_tv_contact_number)
+    TextView contactNumber;
+
+    @Bind(R.id.main_profiles_tv_home_address)
+    TextView address;
+
+    @Bind(R.id.main_profiles_container)
+    LinearLayout profiles;
+
+    private LayoutInflater layoutInflater;
 
     /**
      * Use this factory method to create a new instance of
@@ -93,8 +113,30 @@ public class PersonalDetailsFragment extends FlexibleSpaceWithImageBaseFragment 
 
         scrollView.setScrollViewCallbacks(this);
 
+        summary.setText(basicInfo.getSummary());
+        contactNumber.setText(basicInfo.getPhone());
 
+        contactNumber.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent callIntent = new Intent(Intent.ACTION_CALL);
+                callIntent.setData(Uri.parse("tel:" + basicInfo.getPhone()));
+                startActivity(callIntent);
+            }
+        });
 
+        if(basicInfo.getLocation() != null) {
+            address.setText(basicInfo.getLocation().getFormattedAddress());
+        } else {
+            address.setText("N/A");
+        }
+
+        List<Profile> profiles = basicInfo.getProfiles();
+        if(profiles != null && profiles.size() > 0) {
+            for (Profile profile : profiles) {
+                populateProfile(profile);
+            }
+        }
 
         return rootView;
     }
@@ -124,4 +166,37 @@ public class PersonalDetailsFragment extends FlexibleSpaceWithImageBaseFragment 
         // Calling this twice is not a problem as long as updateFlexibleSpace(int, View) has idempotence.
         updateFlexibleSpace(scrollY, getView());
     }
+
+    private void populateProfile(final Profile profile) {
+
+        Object[] details = profile.getAppropriateDetails();
+        if(details != null) {
+            if(layoutInflater == null) {
+                layoutInflater = LayoutInflater.from(getActivity());
+            }
+
+            View profileTemplate = layoutInflater.inflate(R.layout.inflate_view_profile, null, false);
+
+            ImageView logo = (ImageView) profileTemplate.findViewById(R.id.profile_icon);
+            TextView label = (TextView) profileTemplate.findViewById(R.id.profile_label);
+
+            logo.setImageDrawable(ContextCompat.getDrawable(getActivity(), (Integer) details[0]));
+            label.setText(details[1] + profile.getUsername());
+
+            profileTemplate.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent webIntent = new Intent("android.intent.action.VIEW", Uri.parse(profile.getProfileURL()));
+                    startActivity(webIntent);
+                }
+            });
+
+            profiles.addView(profileTemplate);
+
+        }
+
+
+
+    }
+
 }

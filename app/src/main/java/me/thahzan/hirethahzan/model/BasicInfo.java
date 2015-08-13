@@ -150,7 +150,7 @@ public class BasicInfo implements Serializable {
 //        return new JSONObject(map);
 //    }
 
-    public static class UserLocation {
+    public static class UserLocation implements Serializable {
         private String address;
         private String postalCode;
         private String city;
@@ -199,6 +199,19 @@ public class BasicInfo implements Serializable {
 
         public String getRegion() {
             return region;
+        }
+
+        public String getFormattedAddress() {
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.append(address).append(", ").append(city);
+
+            if(postalCode != null && postalCode.length() > 0) {
+                stringBuilder.append(" (").append(postalCode).append(")");
+            }
+
+            stringBuilder.append("\n").append(region).append("\n").append(countryCode);
+
+            return stringBuilder.toString();
         }
 
 //        public void setRegion(String region) {

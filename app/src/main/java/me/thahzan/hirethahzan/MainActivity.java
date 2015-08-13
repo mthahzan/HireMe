@@ -96,16 +96,6 @@ public class MainActivity extends BaseActivity {
 //                            Toast.makeText(MainActivity.this, "Loaded", Toast.LENGTH_SHORT).show();
                             Bitmap bitmap = ((BitmapDrawable)profileImage.getDrawable()).getBitmap();
                             if(bitmap != null) {
-//                                AsyncTask paletteAsyncTask = Palette.from(bitmap).generate(new Palette.PaletteAsyncListener() {
-//                                    @Override
-//                                    public void onGenerated(Palette palette) {
-//                                        int vibrantColor = palette.getVibrantColor(getResources().getColor(R.color.primary));
-//                                        changeThemeColor(vibrantColor);
-//                                    }
-//                                });
-//
-//                                paletteAsyncTask.execute();
-
                                 Palette palette = Palette.from(bitmap).generate();
                                 int vibrantColor = palette.getVibrantColor(getResources().getColor(R.color.primary));
                                 changeThemeColor(vibrantColor);
@@ -121,6 +111,10 @@ public class MainActivity extends BaseActivity {
 
     }
 
+    /**
+     * Incremental color change of views.
+     * @param newColor The color to change to.
+     */
     private void changeThemeColor(int newColor) {
 
         //Animated colour change
@@ -131,22 +125,12 @@ public class MainActivity extends BaseActivity {
             public void onAnimationUpdate(ValueAnimator animator) {
                 overlayView.setBackgroundColor((Integer)animator.getAnimatedValue());
 
-//                mToolbarColor = (Integer)animator.getAnimatedValue();
-//                mOverlayColor = (Integer)animator.getAnimatedValue();
-
-
-
-//                mFab.setColorPressed(darkerColor((Integer)animator.getAnimatedValue()));
-
-
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                     Window window = getWindow();
                     window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
                     window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
                     window.setStatusBarColor(darkerColor((Integer)animator.getAnimatedValue()));
                 }
-
-//                mFab.setColorNormal((Integer)animator.getAnimatedValue());
 
             }
 
@@ -276,13 +260,8 @@ public class MainActivity extends BaseActivity {
         }
     }
 
-    /**
-     * This adapter provides three types of fragments as an example.
-     * {@linkplain #createItem(int)} should be modified if you use this example for your app.
-     */
     private static class NavigationAdapter extends CacheFragmentStatePagerAdapter {
 
-//        private static final String[] TITLES = new String[]{"Applepie", "Butter Cookie", "Cupcake", "Donut", "Eclair", "Froyo", "Gingerbread", "Honeycomb", "Ice Cream Sandwich", "Jelly Bean", "KitKat", "Lollipop"};
         private final List<String> titles;
 
         private int mScrollY;
@@ -307,11 +286,10 @@ public class MainActivity extends BaseActivity {
                     break;
                 }
                 default: {
-                    f = new FlexibleSpaceWithImageScrollViewFragment();
+                    f = FlexibleSpaceWithImageScrollViewFragment.getInstance(mScrollY);
                     break;
                 }
             }
-            f.setArguments(mScrollY);
             return f;
         }
 
