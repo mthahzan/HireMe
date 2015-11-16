@@ -60,7 +60,161 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        resume = Resume.getInstance("{\"basics\":{\"name\":\"M. N. Mohomed Thahzan\",\"label\":\"Android Application Developer\",\"picture\":\"https://scontent-sin1-1.xx.fbcdn.net/hphotos-xat1/t31.0-8/10644290_10152445778021725_5512972876630151693_o.jpg\",\"email\":\"mthahzan@gmail.com\",\"phone\":\"+94 711 911 644\",\"website\":\"\",\"summary\":\"A summary of Mohomed Thahzan.\\nThis may take a few lines...\",\"location\":{\"address\":\"95, Se Street\",\"postalCode\":\"11500\",\"city\":\"Negombo\",\"countryCode\":\"SL\",\"region\":\"Western Province\"},\"profiles\":[{\"network\":\"Twitter\",\"username\":\"mthahzan\",\"url\":\"https://twitter.com/mthahzan\"},{\"network\":\"Facebook\",\"username\":\"mthahzan\",\"url\":\"https://www.facebook.com/mthahzan\"},{\"network\":\"Google Plus\",\"username\":\"ThahzanMohomed\",\"url\":\"https://plus.google.com/+ThahzanMohomed/\"},{\"network\":\"Linkedin\",\"username\":\"mthahzan\",\"url\":\"https://lk.linkedin.com/in/mthahzan\"},{\"network\":\"StackOverflow\",\"username\":\"thahzan-mohomed\",\"url\":\"http://stackoverflow.com/users/2857164/thahzan-mohomed\"}]},\"work\":[{\"company\":\"Ceylon Linux\",\"position\":\"Android Application Developer\",\"website\":\"http://www.ceylonlinux.com\",\"startDate\":\"2014-01-21\",\"endDate\":\"\",\"summary\":\"Started as an intern. Now the best developer in the entire company.\",\"highlights\":[\"Developed Edna Sales Force Automation System (Android Application) and Laugfs Dealer Mapping Android Application from the scratch.\",\"Debugged and enhanced several other Android applications (ie : Lucky Lanka, Laugfs, Ceylon and Foriegn Trades, etc.)\"]}],\"volunteer\":[],\"education\":[{\"institution\":\"ESoft\",\"area\":\"BCS - Certificate Level\",\"studyType\":\"Certificate\",\"startDate\":\"2013-04-01\",\"endDate\":\"2013-09-01\",\"gpa\":\"\",\"courses\":[\"Information Systems\",\"Software Development\",\"Computer and Network Technology\"]},{\"institution\":\"ESoft\",\"area\":\"BCS - Diploma Level\",\"studyType\":\"Diploma\",\"startDate\":\"2013-10-01\",\"endDate\":\"2014-03-01\",\"gpa\":\"\",\"courses\":[\"Computer Networks\",\"Database Systems\",\"Object Oriented Programming\",\"Professional Issues in Information Systems Practice\"]},{\"institution\":\"ESoft\",\"area\":\"BCS - Professional Graduate Diploma Level\",\"studyType\":\"Bachelor\",\"startDate\":\"2014-10-01\",\"endDate\":\"2015-03-01\",\"gpa\":\"\",\"courses\":[\"Network Information Systems\",\"Distributed and Parrallel Systems\",\"Knowledge Based Systems\",\"Web Engineering\"]}],\"awards\":[],\"publications\":[],\"skills\":[{\"name\":\"Android App Development\",\"level\":\"Intermediate\",\"keywords\":[\"Java\",\"Android\",\"XML\",\"JSON\"]},{\"name\":\"iOS Development\",\"level\":\"Beginner\",\"keywords\":[\"Objective-C\",\"Swift\"]}],\"languages\":[{\"language\":\"English\",\"fluency\":\"Fluent both written and orally\"},{\"language\":\"Singhalese\",\"fluency\":\"Native speaker\"},{\"language\":\"Tamil\",\"fluency\":\"Native Speaker\"}],\"interests\":[{\"name\":\"Football\",\"keywords\":[\"Manchester United\",\"Barclays Premier League\",\"UEFA Champions League\"]}],\"references\":[{\"name\":\"Waruna Buwaneka\",\"reference\":\"Director - EI&M Private Limited.\"}]}");
+        resume = Resume.getInstance("{\n" +
+                "  \"basics\": {\n" +
+                "    \"name\": \"M. N. Mohomed Thahzan\",\n" +
+                "    \"label\": \"Android Application Developer\",\n" +
+                "    \"picture\": \"https://scontent-sin1-1.xx.fbcdn.net/hphotos-xat1/t31.0-8/10644290_10152445778021725_5512972876630151693_o.jpg\",\n" +
+                "    \"email\": \"mthahzan@gmail.com\",\n" +
+                "    \"phone\": \"+94 711 911 644\",\n" +
+                "    \"website\": \"\",\n" +
+                "    \"summary\": \"A summary of Mohomed Thahzan.\\nThis may take a few lines...\",\n" +
+                "    \"location\": {\n" +
+                "      \"address\": \"95, Se Street\",\n" +
+                "      \"postalCode\": \"11500\",\n" +
+                "      \"city\": \"Negombo\",\n" +
+                "      \"countryCode\": \"SL\",\n" +
+                "      \"region\": \"Western Province\"\n" +
+                "    },\n" +
+                "    \"profiles\": [\n" +
+                "      {\n" +
+                "        \"network\": \"Twitter\",\n" +
+                "        \"username\": \"mthahzan\",\n" +
+                "        \"url\": \"https://twitter.com/mthahzan\"\n" +
+                "      },\n" +
+                "      {\n" +
+                "        \"network\": \"Facebook\",\n" +
+                "        \"username\": \"mthahzan\",\n" +
+                "        \"url\": \"https://www.facebook.com/mthahzan\"\n" +
+                "      },\n" +
+                "      {\n" +
+                "        \"network\": \"Google Plus\",\n" +
+                "        \"username\": \"ThahzanMohomed\",\n" +
+                "        \"url\": \"https://plus.google.com/+ThahzanMohomed/\"\n" +
+                "      },\n" +
+                "      {\n" +
+                "        \"network\": \"Linkedin\",\n" +
+                "        \"username\": \"mthahzan\",\n" +
+                "        \"url\": \"https://lk.linkedin.com/in/mthahzan\"\n" +
+                "      },\n" +
+                "      {\n" +
+                "        \"network\": \"StackOverflow\",\n" +
+                "        \"username\": \"thahzan-mohomed\",\n" +
+                "        \"url\": \"http://stackoverflow.com/users/2857164/thahzan-mohomed\"\n" +
+                "      }\n" +
+                "    ]\n" +
+                "  },\n" +
+                "  \"work\": [\n" +
+                "    {\n" +
+                "      \"company\": \"Ceylon Linux\",\n" +
+                "      \"position\": \"Android Application Developer\",\n" +
+                "      \"website\": \"http://www.ceylonlinux.com\",\n" +
+                "      \"startDate\": \"2014-01-21\",\n" +
+                "      \"endDate\": \"\",\n" +
+                "      \"summary\": \"Started as an intern. Now the best developer in the entire company.\",\n" +
+                "      \"highlights\": [\n" +
+                "        \"Developed Edna Sales Force Automation System (Android Application) and Laugfs Dealer Mapping Android Application from the scratch.\",\n" +
+                "        \"Debugged and enhanced several other Android applications (ie : Lucky Lanka, Laugfs, Ceylon and Foriegn Trades, etc.)\"\n" +
+                "      ]\n" +
+                "    }\n" +
+                "  ],\n" +
+                "  \"volunteer\": [],\n" +
+                "  \"education\": [\n" +
+                "    {\n" +
+                "      \"institution\": \"ESoft\",\n" +
+                "      \"area\": \"BCS - Certificate Level\",\n" +
+                "      \"studyType\": \"Certificate\",\n" +
+                "      \"startDate\": \"2013-04-01\",\n" +
+                "      \"endDate\": \"2013-09-01\",\n" +
+                "      \"gpa\": \"\",\n" +
+                "      \"courses\": [\n" +
+                "        \"Information Systems\",\n" +
+                "        \"Software Development\",\n" +
+                "        \"Computer and Network Technology\"\n" +
+                "      ]\n" +
+                "    },\n" +
+                "    {\n" +
+                "      \"institution\": \"ESoft\",\n" +
+                "      \"area\": \"BCS - Diploma Level\",\n" +
+                "      \"studyType\": \"Diploma\",\n" +
+                "      \"startDate\": \"2013-10-01\",\n" +
+                "      \"endDate\": \"2014-03-01\",\n" +
+                "      \"gpa\": \"\",\n" +
+                "      \"courses\": [\n" +
+                "        \"Computer Networks\",\n" +
+                "        \"Database Systems\",\n" +
+                "        \"Object Oriented Programming\",\n" +
+                "        \"Professional Issues in Information Systems Practice\"\n" +
+                "      ]\n" +
+                "    },\n" +
+                "    {\n" +
+                "      \"institution\": \"ESoft\",\n" +
+                "      \"area\": \"BCS - Professional Graduate Diploma Level\",\n" +
+                "      \"studyType\": \"Bachelor\",\n" +
+                "      \"startDate\": \"2014-10-01\",\n" +
+                "      \"endDate\": \"2015-03-01\",\n" +
+                "      \"gpa\": \"\",\n" +
+                "      \"courses\": [\n" +
+                "        \"Network Information Systems\",\n" +
+                "        \"Distributed and Parrallel Systems\",\n" +
+                "        \"Knowledge Based Systems\",\n" +
+                "        \"Web Engineering\"\n" +
+                "      ]\n" +
+                "    }\n" +
+                "  ],\n" +
+                "  \"awards\": [],\n" +
+                "  \"publications\": [],\n" +
+                "  \"skills\": [\n" +
+                "    {\n" +
+                "      \"name\": \"Android App Development\",\n" +
+                "      \"level\": \"Intermediate\",\n" +
+                "      \"keywords\": [\n" +
+                "        \"Java\",\n" +
+                "        \"Android\",\n" +
+                "        \"XML\",\n" +
+                "        \"JSON\"\n" +
+                "      ]\n" +
+                "    },\n" +
+                "    {\n" +
+                "      \"name\": \"iOS Development\",\n" +
+                "      \"level\": \"Beginner\",\n" +
+                "      \"keywords\": [\n" +
+                "        \"Objective-C\",\n" +
+                "        \"Swift\"\n" +
+                "      ]\n" +
+                "    }\n" +
+                "  ],\n" +
+                "  \"languages\": [\n" +
+                "    {\n" +
+                "      \"language\": \"English\",\n" +
+                "      \"fluency\": \"Fluent both written and orally\"\n" +
+                "    },\n" +
+                "    {\n" +
+                "      \"language\": \"Singhalese\",\n" +
+                "      \"fluency\": \"Native speaker\"\n" +
+                "    },\n" +
+                "    {\n" +
+                "      \"language\": \"Tamil\",\n" +
+                "      \"fluency\": \"Native Speaker\"\n" +
+                "    }\n" +
+                "  ],\n" +
+                "  \"interests\": [\n" +
+                "    {\n" +
+                "      \"name\": \"Football\",\n" +
+                "      \"keywords\": [\n" +
+                "        \"Manchester United\",\n" +
+                "        \"Barclays Premier League\",\n" +
+                "        \"UEFA Champions League\"\n" +
+                "      ]\n" +
+                "    }\n" +
+                "  ],\n" +
+                "  \"references\": [\n" +
+                "    {\n" +
+                "      \"name\": \"Waruna Buwaneka\",\n" +
+                "      \"reference\": \"Director - EI&M Private Limited.\"\n" +
+                "    }\n" +
+                "  ]\n" +
+                "}");
 
         mPagerAdapter = new NavigationAdapter(getSupportFragmentManager(), resume);
         mPager = (ViewPager) findViewById(R.id.pager);
