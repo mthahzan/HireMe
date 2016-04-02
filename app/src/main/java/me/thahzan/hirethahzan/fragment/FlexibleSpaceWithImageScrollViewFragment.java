@@ -14,6 +14,7 @@ import me.thahzan.hirethahzan.R;
 
 /**
  * Created by TaZ on 7/1/15.
+ * Abstract class to extend to get a working FlexibleSpaceWithImageScrollViewFragment in action
  */
 public class FlexibleSpaceWithImageScrollViewFragment extends FlexibleSpaceWithImageBaseFragment<ObservableScrollView> {
 

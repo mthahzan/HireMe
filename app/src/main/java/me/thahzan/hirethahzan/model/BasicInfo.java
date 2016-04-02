@@ -111,45 +111,6 @@ public class BasicInfo implements Serializable {
 //        this.profiles = profiles;
 //    }
 
-//    public static BasicInfo parseBasicInfo(JSONObject instance) throws JSONException {
-//
-//        BasicInfo basicInfo = new BasicInfoBuilder()
-//                .setName(instance.getString("name"))
-//                .setLabel(instance.getString("label"))
-//                .setEmail(instance.getString("email"))
-//                .setContactNumber(instance.getString("phone"))
-//                .setProfileSummary(instance.getString("summary"))
-//                .setUserLocation(UserLocation.parseUserLocation(instance.getJSONObject("location")))
-//                .createBasicInfo();
-//
-//        String imageURL = instance.getString("picture");
-//        if(StringHandlerUtil.isValidString(imageURL)) {
-//            basicInfo.setPicture(imageURL);
-//        }
-//
-//        String website = instance.getString("website");
-//        if(StringHandlerUtil.isValidString(website)){
-//            basicInfo.setWebsite(website);
-//        }
-//
-//        return basicInfo;
-//    }
-//
-//    public JSONObject toJSON() {
-//
-//        HashMap<String, Object> map = new HashMap<>();
-//        map.put("name", name);
-//        map.put("name", label);
-//        map.put("name", email);
-//        map.put("name", picture);
-//        map.put("name", website);
-//        map.put("name", phone);
-//        map.put("name", summary);
-//        map.put("name", location.toJSON());
-//
-//        return new JSONObject(map);
-//    }
-
     public static class UserLocation implements Serializable {
         private String address;
         private String postalCode;
@@ -218,88 +179,6 @@ public class BasicInfo implements Serializable {
 //            this.region = region;
 //        }
 
-//        public static UserLocation parseUserLocation(JSONObject instance) throws JSONException {
-//            return new UserLocation(instance.getString("address"),
-//                    instance.getString("postalCode"), instance.getString("city"),
-//                    instance.getString("countryCode"), instance.getString("region"));
-//
-//        }
-//
-//        public JSONObject toJSON() {
-//
-//            HashMap<String, String> map = new HashMap<>();
-//            map.put("address", address);
-//            map.put("postalCode", postalCode);
-//            map.put("city", city);
-//            map.put("countryCode", countryCode);
-//            map.put("region", region);
-//
-//            return new JSONObject(map);
-//        }
-
     }
-
-//    public static class BasicInfoBuilder {
-//
-//        private String name;
-//        private String label;
-//        private String email;
-//        private String imageURL;
-//        private String contactNumber;
-//        private String website;
-//        private String profileSummary;
-//        private UserLocation userLocation;
-//        private List<Profile> profiles;
-//
-//        public BasicInfoBuilder setName(String name) {
-//            this.name = name;
-//            return this;
-//        }
-//
-//        public BasicInfoBuilder setLabel(String label) {
-//            this.label = label;
-//            return this;
-//        }
-//
-//        public BasicInfoBuilder setEmail(String email) {
-//            this.email = email;
-//            return this;
-//        }
-//
-//        public BasicInfoBuilder setImageURL(String imageURL) {
-//            this.imageURL = imageURL;
-//            return this;
-//        }
-//
-//        public BasicInfoBuilder setContactNumber(String contactNumber) {
-//            this.contactNumber = contactNumber;
-//            return this;
-//        }
-//
-//        public BasicInfoBuilder setWebsite(String website) {
-//            this.website = website;
-//            return this;
-//        }
-//
-//        public BasicInfoBuilder setProfileSummary(String profileSummary) {
-//            this.profileSummary = profileSummary;
-//            return this;
-//        }
-//
-//        public BasicInfoBuilder setUserLocation(UserLocation userLocation) {
-//            this.userLocation = userLocation;
-//            return this;
-//        }
-//
-//        public BasicInfoBuilder setProfiles(List<Profile> profiles) {
-//            this.profiles = profiles;
-//            return this;
-//        }
-//
-//        public BasicInfo createBasicInfo() {
-//            return new BasicInfo(name, label, email, imageURL, contactNumber, website, profileSummary,
-//                    userLocation, profiles);
-//        }
-//    }
 
 }

@@ -7,19 +7,18 @@ import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
-import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
 import android.support.v7.graphics.Palette;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.github.ksoichiro.android.observablescrollview.CacheFragmentStatePagerAdapter;
 import com.github.ksoichiro.android.observablescrollview.ScrollUtils;
@@ -40,6 +39,7 @@ import me.thahzan.hirethahzan.widget.SlidingTabLayout;
 public class MainActivity extends BaseActivity {
 
     protected static final float MAX_TEXT_SCALE_DELTA = 0.3f;
+    private static final String LOG_TAG = MainActivity.class.getSimpleName();
 
     private ViewPager mPager;
     private NavigationAdapter mPagerAdapter;
@@ -52,8 +52,6 @@ public class MainActivity extends BaseActivity {
     private TextView titleView;
     private View overlayView;
     private ImageView profileImage;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -265,24 +263,24 @@ public class MainActivity extends BaseActivity {
         });
 
         if(resume.getBasics().getPicture() != null) {
-            Picasso.with(MainActivity.this).load(resume.getBasics().getPicture()).resize(512, 512).centerCrop()
-                    .into(profileImage, new Callback() {
-                        @Override
-                        public void onSuccess() {
-//                            Toast.makeText(MainActivity.this, "Loaded", Toast.LENGTH_SHORT).show();
-                            Bitmap bitmap = ((BitmapDrawable)profileImage.getDrawable()).getBitmap();
-                            if(bitmap != null) {
-                                Palette palette = Palette.from(bitmap).generate();
-                                int vibrantColor = palette.getVibrantColor(getResources().getColor(R.color.primary));
-                                changeThemeColor(vibrantColor);
-                            }
+            Picasso
+                .with(MainActivity.this).load(resume.getBasics().getPicture()).resize(512, 512).centerCrop()
+                .into(profileImage, new Callback() {
+                    @Override
+                    public void onSuccess() {
+                        Bitmap bitmap = ((BitmapDrawable)profileImage.getDrawable()).getBitmap();
+                        if(bitmap != null) {
+                            Palette palette = Palette.from(bitmap).generate();
+                            int vibrantColor = palette.getVibrantColor(getResources().getColor(R.color.primary));
+                            changeThemeColor(vibrantColor);
                         }
+                    }
 
-                        @Override
-                        public void onError() {
-
-                        }
-                    });
+                    @Override
+                    public void onError() {
+                        Log.e(LOG_TAG, "onError called");
+                    }
+                });
         }
 
     }
@@ -292,7 +290,6 @@ public class MainActivity extends BaseActivity {
      * @param newColor The color to change to.
      */
     private void changeThemeColor(int newColor) {
-
         //Animated colour change
         int colorFrom = getResources().getColor(R.color.primary);
         ValueAnimator colorAnimation = ValueAnimator.ofObject(new ArgbEvaluator(), colorFrom, newColor);

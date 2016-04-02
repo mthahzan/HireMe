@@ -70,26 +70,4 @@ public class Publication implements Serializable {
 //        this.summary = summary;
 //    }
 
-//    public static Publication parsePublication(JSONObject instance) throws JSONException {
-//
-//        Publication publication = new Publication(instance.getString("name"), instance.getString("publisher"),
-//                instance.getString("releaseDate"), instance.getString("summary"));
-//
-//        String website = instance.getString("website");
-//        if (StringHandlerUtil.isValidString(website)) publication.setWebsite(website);
-//
-//        return publication;
-//    }
-//
-//    public JSONObject toJSON() {
-//        HashMap<String, String> map = new HashMap<>();
-//        map.put("name", name);
-//        map.put("publisher", publisher);
-//        map.put("releaseDate", releaseDate);
-//        map.put("website", website);
-//        map.put("summary", summary);
-//
-//        return new JSONObject(map);
-//    }
-
 }

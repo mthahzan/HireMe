@@ -30,40 +30,13 @@ public class Profile implements Serializable {
         return network;
     }
 
-//    public void setNetwork(String network) {
-//        this.network = network;
-//    }
-
     public String getUsername() {
         return username;
     }
 
-//    public void setUsername(String username) {
-//        this.username = username;
-//    }
-
     public String getProfileURL() {
         return profileURL;
     }
-
-//    public void setProfileURL(String profileURL) {
-//        this.profileURL = profileURL;
-//    }
-
-//    public static Profile parseProfile(JSONObject instance) throws JSONException {
-//        return new Profile(instance.getString("network"), instance.getString("username"),
-//                instance.getString("url"));
-//    }
-//
-//    public JSONObject toJSON() {
-//
-//        HashMap<String, String> map = new HashMap<>();
-//        map.put("network", network);
-//        map.put("username", username);
-//        map.put("url", profileURL);
-//
-//        return new JSONObject(map);
-//    }
 
     /**
      * Returns an array of [int, String]

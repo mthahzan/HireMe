@@ -17,6 +17,7 @@ import me.thahzan.hirethahzan.adapter.SimpleRecyclerAdapter;
 
 /**
  * Created by TaZ on 7/1/15.
+ * Base activity class.
  */
 public abstract class BaseActivity extends AppCompatActivity {
 

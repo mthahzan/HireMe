@@ -21,6 +21,7 @@ import me.thahzan.hirethahzan.adapter.SimpleRecyclerAdapter;
 
 /**
  * Created by TaZ on 7/1/15.
+ * Base fragment class
  */
 public abstract class BaseFragment extends Fragment {
     public static ArrayList<String> getDummyData() {

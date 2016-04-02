@@ -57,19 +57,4 @@ public class Award implements Serializable {
 //        this.summary = summary;
 //    }
 
-//    public static Award parseAward(JSONObject instance) throws JSONException {
-//        return new Award(instance.getString("title"), instance.getString("date"),
-//                instance.getString("awarder"), instance.getString("summary"));
-//    }
-//
-//    public JSONObject toJSON() {
-//        HashMap<String, String> map = new HashMap<>();
-//        map.put("title", title);
-//        map.put("date", date);
-//        map.put("awarder", awarder);
-//        map.put("summary", summary);
-//
-//        return new JSONObject(map);
-//    }
-
 }

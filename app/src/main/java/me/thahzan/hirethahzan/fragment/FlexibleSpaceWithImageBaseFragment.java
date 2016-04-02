@@ -11,6 +11,7 @@ import me.thahzan.hirethahzan.R;
 
 /**
  * Created by TaZ on 7/1/15.
+ * Abstract class to extend to get a working FlexibleSpaceWithImageBaseFragment in action
  */
 public abstract class FlexibleSpaceWithImageBaseFragment<S extends Scrollable> extends BaseFragment
         implements ObservableScrollViewCallbacks {

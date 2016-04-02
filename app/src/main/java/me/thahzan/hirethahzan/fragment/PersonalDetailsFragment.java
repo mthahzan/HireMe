@@ -38,7 +38,7 @@ public class PersonalDetailsFragment extends FlexibleSpaceWithImageBaseFragment 
 
     private BasicInfo basicInfo;
 
-    private int scrollY;
+//    private int scrollY;
 
     @Bind(R.id.main_mini_bio_tv_summary)
     TextView summary;
@@ -79,7 +79,7 @@ public class PersonalDetailsFragment extends FlexibleSpaceWithImageBaseFragment 
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             basicInfo = (BasicInfo) getArguments().getSerializable(BASIC_INFO);
-            scrollY = getArguments().getInt(SCROLL, 0);
+//            scrollY = getArguments().getInt(SCROLL, 0);
         }
     }
 
@@ -171,6 +171,9 @@ public class PersonalDetailsFragment extends FlexibleSpaceWithImageBaseFragment 
 
         Object[] details = profile.getAppropriateDetails();
         if(details != null) {
+            // Username with appropriate prefix
+            String username = details[1] + profile.getUsername();
+
             if(layoutInflater == null) {
                 layoutInflater = LayoutInflater.from(getActivity());
             }
@@ -181,7 +184,7 @@ public class PersonalDetailsFragment extends FlexibleSpaceWithImageBaseFragment 
             TextView label = (TextView) profileTemplate.findViewById(R.id.profile_label);
 
             logo.setImageDrawable(ContextCompat.getDrawable(getActivity(), (Integer) details[0]));
-            label.setText(details[1] + profile.getUsername());
+            label.setText(username);
 
             profileTemplate.setOnClickListener(new View.OnClickListener() {
                 @Override
