@@ -6,12 +6,9 @@ package me.thahzan.hirethahzan.utils;
 public class StringHandlerUtil {
 
     public static boolean isValidString(String instance) {
-        if(instance != null && instance.length() > 0
-                && (!instance.equalsIgnoreCase("null") || !instance.equalsIgnoreCase("n/a"))) {
-            return true;
-        }
+        return instance != null && instance.length() > 0
+                && (!instance.equalsIgnoreCase("null") || !instance.equalsIgnoreCase("n/a"));
 
-        return false;
     }
 
 }

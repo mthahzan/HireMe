@@ -64,7 +64,7 @@ public class MainActivity extends BaseActivity {
                 "  \"basics\": {\n" +
                 "    \"name\": \"M. N. Mohomed Thahzan\",\n" +
                 "    \"label\": \"Android Application Developer\",\n" +
-                "    \"picture\": \"https://scontent-sin1-1.xx.fbcdn.net/hphotos-xat1/t31.0-8/10644290_10152445778021725_5512972876630151693_o.jpg\",\n" +
+                "    \"picture\": \"https://lh3.googleusercontent.com/S2AbRJNM8HIqpDLNP8xMRmSUXgoBQ1QPm2zSJ6L2WhL2sNmfEdjlpE2FinI3ttQA415tyHbVR9BldxVQuabYrP_tsYSpe-_02exXYXGndf0suTSeYf8_PxVYmOG1F0TGn4_nX7i7ecU2zuU9wIKRjWOjqyQB2p5UFLDYIyrPSHjUUBecrH33q03OcxCEbUqb7r1iqfMHXvr8LxaBa7SkT8bNTRiVEaT-ua58-XcM-sgUNcOcCS2DFvIVhbXNIjMxI-zItYklkMORwF69KMmwS2OM5qWZ52zcmuf0X3dlEEfg3U1APLP5sMaZdFdsU0tMDQrsbs8lxx85hE8MogbJ71XpBLOqcSSvpV-kLqA6c95U3DTx33YIR540t1nov_5zKdOd53TNtTDIbb3gZeSeW2W5Q7QqfU506zA2Bv8isj90YXybJcrKQoaifPA_s8_7Uju_LGfRw1Q5dmyGT77qSi9Oko4GFlcDKbR1QLepy6ad0ztuSLuDyUZaSbk13ewriL0NRJYZ8hcvZZjJaPbg0tyBHIVKwOG2U0NbcTHklN4=s608-no\",\n" +
                 "    \"email\": \"mthahzan@gmail.com\",\n" +
                 "    \"phone\": \"+94 711 911 644\",\n" +
                 "    \"website\": \"\",\n" +
@@ -110,11 +110,22 @@ public class MainActivity extends BaseActivity {
                 "      \"position\": \"Android Application Developer\",\n" +
                 "      \"website\": \"http://www.ceylonlinux.com\",\n" +
                 "      \"startDate\": \"2014-01-21\",\n" +
-                "      \"endDate\": \"\",\n" +
-                "      \"summary\": \"Started as an intern. Now the best developer in the entire company.\",\n" +
+                "      \"endDate\": \"2015-08-26\",\n" +
+                "      \"summary\": \"Rose through the ranks from an intern to senior developer\",\n" +
                 "      \"highlights\": [\n" +
                 "        \"Developed Edna Sales Force Automation System (Android Application) and Laugfs Dealer Mapping Android Application from the scratch.\",\n" +
                 "        \"Debugged and enhanced several other Android applications (ie : Lucky Lanka, Laugfs, Ceylon and Foriegn Trades, etc.)\"\n" +
+                "      ]\n" +
+                "    },\n" +
+                "    {\n" +
+                "      \"company\": \"Calcey Technologies\",\n" +
+                "      \"position\": \"Software Engineer\",\n" +
+                "      \"website\": \"http://www.calcey.com\",\n" +
+                "      \"startDate\": \"2014-08-28\",\n" +
+                "      \"endDate\": \"\",\n" +
+                "      \"summary\": \"Starting life as a Software Engineer\",\n" +
+                "      \"highlights\": [\n" +
+                "        \"Developed the product - Project Dashboard\"\n" +
                 "      ]\n" +
                 "    }\n" +
                 "  ],\n" +
@@ -181,6 +192,17 @@ public class MainActivity extends BaseActivity {
                 "      \"keywords\": [\n" +
                 "        \"Objective-C\",\n" +
                 "        \"Swift\"\n" +
+                "      ]\n" +
+                "    },\n" +
+                "    {\n" +
+                "      \"name\": \"Web Application Development\",\n" +
+                "      \"level\": \"Beginner\",\n" +
+                "      \"keywords\": [\n" +
+                "        \"Javascript\",\n" +
+                "        \"Single Page Applications\",\n" +
+                "        \"NodeJS\",\n" +
+                "        \"EmberJS\",\n" +
+                "        \"SailsJS\"\n" +
                 "      ]\n" +
                 "    }\n" +
                 "  ],\n" +
